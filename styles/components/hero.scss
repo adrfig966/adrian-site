@@ -1,0 +1,5 @@
+.section--hero {
+  @extend .section;
+
+  @apply text-center text-white min-h-hero flex items-center justify-center text-5xl;
+}

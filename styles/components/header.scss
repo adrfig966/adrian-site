@@ -1,0 +1,161 @@
+@use "sass:math";
+
+header.header--main {
+  $btnheight: 40px;
+  $btnspace: 13px;
+  $barheight: math.div(($btnheight - $btnspace * 2), 3);
+
+  @apply w-full bg-light-blue-gray bg-opacity-10 mb-8 px-4 relative;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+  .header__container {
+    @apply mx-auto py-4 flex justify-between items-center;
+  }
+
+  &.menu-open {
+    .nav-btn {
+      .btn-bar,
+      &::after,
+      &::before {
+        transition: transform 0.5s 0.5s, top 0.5s, bottom 0.5s, opacity 0s 0.5s;
+      }
+
+      .btn-bar {
+        @apply opacity-0;
+      }
+
+      &::before {
+        top: calc(50% - #{$barheight} / 2);
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - #{$barheight} / 2);
+        transform: rotate(45deg);
+      }
+    }
+
+    nav {
+      transition: transform  0.5s;
+      transform: scaleY(1);
+    }
+  }
+
+  .nav-btn {
+    height: $btnheight;
+    width: $btnheight;
+
+    @apply relative block;
+
+    @screen lg {
+      @apply hidden;
+    }
+
+    &::before {
+      top: 0px;
+    }
+
+    &::after {
+      bottom: 0px;
+    }
+
+    .btn-bar {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .btn-bar,
+    &::after,
+    &::before {
+      @apply absolute bg-white;
+
+      height: $barheight;
+      width: 100%;
+      transition: transform  0.5s, top 0.5s 0.5s, bottom 0.5s 0.5s, opacity 0s 0.5s;
+    }
+
+    &::after,
+    &::before {
+      display: block;
+      content: '';
+    }
+  }
+
+  .header__nav {
+    @apply absolute w-full bg-light-purple px-4 py-8;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transform-origin: center top;
+    transform: scaleY(0);
+    top: 100%;
+    left: 0;
+
+    @screen lg-max {
+      @apply z-20;
+
+      transition: transform  0.5s;
+    }
+
+    @screen lg {
+      @apply block w-auto static bg-transparent p-0;
+
+      transform: scaleY(1);
+      box-shadow: none;
+    }
+  }
+
+  .nav__container {
+    @apply justify-center;
+  }
+
+  .nav-item {
+    @apply block;
+  }
+
+  @screen lg {
+    ul {
+      @apply px-0;
+    }
+
+    .nav-item {
+      @apply inline-block;
+    }
+
+    .nav-item + .nav-item {
+      @apply ml-4;
+    }
+  }
+
+  .nav-item {
+    @apply relative;
+
+    a {
+      @apply font-gruppo text-white no-underline;
+      font-size: 30px;
+    }
+
+    &::after {
+      @apply absolute block w-full bg-white z-20;
+
+      content: '';
+      height: 1px;
+      transform: scaleX(0);
+      transition: transform 0.2s ease-in;
+      transform-origin: left;
+
+      @screen lg {
+        transform-origin: center;
+      }
+    }
+
+    &.active-page::after,
+    &:hover::after {
+      transform: scaleX(1);
+
+      @screen lg {
+        transform: scaleX(0.8);
+      }
+    }
+  }
+}

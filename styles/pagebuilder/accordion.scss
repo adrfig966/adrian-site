@@ -1,0 +1,49 @@
+.section--accordion {
+  @extend .section;
+  .content--accordion {
+    @extend .content;
+    @apply rounded-xl mx-auto;
+
+    .accordion-item + .accordion-item {
+      @apply mt-2;
+    }
+
+    .item__header {
+      @apply bg-purple p-2 relative;
+
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        @apply bg-light-purple;
+      }
+
+      &::after {
+        @apply block absolute;
+
+        height: 20px;
+        width: 20px;
+        content: '';
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('/plus.svg');
+        background-size: cover;
+      }
+
+      &.open::after {
+        background-image: url('/minus.svg');
+      }
+    }
+
+    .item__content {
+      @apply relative hidden p-2;
+
+      transform-origin: top center;
+
+      &.open {
+        @apply block;
+      }
+    }
+  }
+}

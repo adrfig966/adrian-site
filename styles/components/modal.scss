@@ -1,0 +1,11 @@
+.modal {
+  @apply absolute left-1/2 bottom-1/2 rounded-xl bg-blue-gray bg-opacity-25;
+  transform: translateX(-50%) translateY(50%);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  max-height: 90vh;
+
+  &--main {
+    @extend .modal;
+    @apply p-8 w-10/12;
+  }
+}

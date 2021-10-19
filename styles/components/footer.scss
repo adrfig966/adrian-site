@@ -1,0 +1,110 @@
+footer.footer--main {
+  @apply w-full mt-8;
+
+  .footer__container {
+    @apply mx-auto py-4 px-6 flex flex-wrap flex-row justify-between items-end border-t text-white border-light-purple font-gruppo;
+
+    font-size: 20px;
+  }
+
+  .column {
+    @screen lg {
+      @apply flex-1;
+    }
+  }
+
+  .column-end {
+    @apply text-left;
+  }
+
+  .column-middle {
+    @apply text-center w-full mb-4 order-first;
+
+
+    @screen lg {
+      @apply w-auto mb-0 order-none;
+    }
+  }
+
+  .column-end {
+    @apply text-right;
+  }
+
+  .footer-logo {
+    @apply inline-block;
+  }
+
+  .footer-nav {
+    @apply justify-center flex flex-col;
+
+    @screen lg {
+      @apply block;
+    }
+  }
+
+  .quick-link {
+    @apply relative;
+
+    padding-left: 28px;
+
+    img {
+      max-height: 40px;
+    }
+
+    a {
+      font-size: 0;
+
+      @screen lg {
+        font-size: 20px;
+      }
+    }
+
+    a::after {
+      @apply absolute block bg-center bg-contain bg-no-repeat;
+
+      content: '';
+      height: 24px;
+      width: 24px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    a.github::after {
+      background-image: url("/github-square.svg");
+    }
+
+    a.linkedin::after {
+      background-image: url("/linkedin.svg");
+    }
+
+    a.resume::after {
+      background-image: url("/file.svg");
+    }
+
+    a.email::after {
+      background-image: url("/envelope.svg");
+    }
+  }
+
+  .nav-item + .nav-item  {
+    @apply ml-0;
+
+    @screen lg {
+      @apply ml-3;
+    }
+  }
+
+  .quick-link + .quick-link {
+    @apply ml-3;
+  }
+
+  .quick-link,
+  .nav-item {
+    @apply inline-block;
+
+    a {
+      @apply no-underline;
+    }
+  }
+}

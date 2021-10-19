@@ -1,0 +1,7 @@
+.section--single {
+  @extend .section;
+  .content--single {
+    @extend .content;
+    @apply rounded-xl mx-auto;
+  }
+}
