@@ -1,0 +1,46 @@
+.section--cards {
+  @extend .section;
+  .content--cards {
+    @extend .content;
+    @apply rounded-xl mx-auto;
+
+    .cards-container {
+      @apply grid gap-7;
+
+      grid-template-columns: 1fr;
+
+      @screen lg {
+        grid-template-columns: 1fr 1fr 1fr;
+      };
+    }
+
+    .blurb-container {
+      @apply mb-5;
+    }
+
+    .card-item {
+      @apply bg-purple p-4;
+    }
+
+    .image-hover {
+      @apply block flex items-center justify-center w-full opacity-0;
+
+      transition: all 0.3s ease-in;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        @apply opacity-100;
+      }
+    }
+
+    .card-image {
+      @apply bg-cover bg-center flex justify-center;
+
+      min-height: 300px;
+    }
+
+    .card-text {
+      @apply mt-3;
+    }
+  }
+}

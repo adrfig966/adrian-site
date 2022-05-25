@@ -25,8 +25,8 @@ export default function Accordion({ sectiondata }) {
   };
 
   return (
-    <div className="section--accordion">
-      <section className="content--accordion container">
+    <section className="section--accordion">
+      <div className="content--accordion container">
         {accordions.map((item, index) => {
           return (
             <div className="accordion-item" key={index}>
@@ -46,7 +46,7 @@ export default function Accordion({ sectiondata }) {
             </div>
           );
         })}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

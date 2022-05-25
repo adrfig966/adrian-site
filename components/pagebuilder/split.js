@@ -15,8 +15,8 @@ export default function SplitColumn({ sectiondata }) {
   const splitspace = sectiondata.gap ? "" : "no-space";
 
   return (
-    <div className={`section--split`}>
-      <section
+    <section className={`section--split`}>
+      <div
         className={`column-container container  ${
           sectiondata.flipsection ? "split-flip" : ""
         } ${splitspace}`}
@@ -31,7 +31,7 @@ export default function SplitColumn({ sectiondata }) {
           className={`split__text-half content ${flexalign}`}
           dangerouslySetInnerHTML={{ __html: sectiondata["texthalf"] }}
         ></div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -30,8 +30,6 @@ export async function getServerSideProps(context) {
   const data = await res.json();
 
   if (!data || data.total == 0) {
-    console.log("Not found :(");
-    console.log("This is data", data);
     return {
       notFound: true,
     };

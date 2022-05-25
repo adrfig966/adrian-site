@@ -11,6 +11,7 @@ export default function ContentPage({ pagedata }) {
     singlesection: "single",
     splitsection: "split",
     accordions: "accordion",
+    cards: "cards",
   };
 
   //When pagedata changes, import the required component files as needed.

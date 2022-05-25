@@ -44,5 +44,5 @@ strong {
 }
 
 a:not([class]) {
-  @apply underline;
+  @apply no-underline font-normal;
 }

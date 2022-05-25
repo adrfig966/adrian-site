@@ -13,15 +13,14 @@ module.exports = {
       colors: {
         primary: "#00ffff",
         secondary: "#ff00ff",
-        //Greys
-        "cool-dark": "#222831",
+        //Greys but I mispelled it
         "light-gray": "#E5E7EB",
         "base-gray": "#D1D5DB",
         "dark-gray": "#9CA3AF",
         "dark-blue-gray": "#94A3B8",
         "blue-gray": "#CBD5E1",
         "light-blue-gray": "#E2E8F0",
-        //Purps
+        //Purple
         "purple-gray": "#393b44",
         "purple": "#2D2A50",
         "light-purple": "#403D60",
