@@ -5,10 +5,6 @@ export default function SplitColumn({ sectiondata }) {
     })`,
   };
 
-  const minheight = {
-    minHeight: `${sectiondata.minheight && sectiondata.minheight}px`,
-  };
-
   const flexalign =
     sectiondata.align == "Center" ? "self-center" : "self-stretch";
 
@@ -22,7 +18,7 @@ export default function SplitColumn({ sectiondata }) {
         } ${splitspace}`}
       >
         <div
-          className={`split__image-half min-h-${
+          className={`split__image-half min-h-350 lg:min-h-${
             sectiondata.minheight && sectiondata.minheight
           }`}
           style={bgimage}

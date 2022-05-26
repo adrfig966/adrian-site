@@ -46,3 +46,7 @@ strong {
 a:not([class]) {
   @apply no-underline font-normal;
 }
+
+p {
+  @apply mb-2
+}

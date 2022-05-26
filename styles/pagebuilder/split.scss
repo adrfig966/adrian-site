@@ -18,10 +18,10 @@
     }
 
     .split__text-half {
-      @apply rounded-xl mt-8;
+      @apply rounded-b-xl;
 
       @screen lg {
-        @apply ml-4 mt-0;
+        @apply ml-4 rounded-xl;
       }
     }
 
@@ -30,7 +30,11 @@
 
       &,
       img {
-        @apply rounded-xl;
+        @apply rounded-t-xl;
+
+        @screen lg {
+          @apply rounded-xl;
+        }
       }
 
       img {
